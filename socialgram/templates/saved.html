@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% block body_block %}
+<div class="container mt-3">
+  <h2 class="text fs-4">Saved</h2>
+    <div class="row mx-auto">
+      {% for savedpost in savedposts %}
+        <div class="img-container overflow-hidden p-0 border" style="width: 155px; height: 155px">
+          <a href="{% url 'post-detail' savedpost.saved_post.id %}">
+            <img class="w-100 h-100"
+              src="{{ savedpost.saved_post.post_image.url }}"
+              alt="" style="object-fit: contain; object-position: center;"/>
+          </a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+{% endblock  %}

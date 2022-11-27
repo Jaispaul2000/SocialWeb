@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>base</title>
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+  <style>
+    body{
+      overflow-x: hidden;
+    }
+    #intro {
+      /* Margin to fix overlapping fixed navbar */
+      margin-top: 58px;
+    }
+
+    @media (max-width: 991px) {
+      #intro {
+        /* Margin to fix overlapping fixed navbar */
+        margin-top: 45px;
+      }
+    }
+    body{
+      background-color: rgba(219, 219, 219, 0.371);
+    }
+    .outline-none{
+      outline: none;
+    }
+    .img-center-thumbnail{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <!-- Intro settings -->
+    
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white">
+      <div class="container-fluid">
+        <!-- Navbar brand -->
+        {% comment %} <a class="navbar-brand" target="_blank" href="https://mdbootstrap.com/docs/standard/">
+          <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="16" alt="" loading="lazy"
+            style="margin-top: -3px;" />
+        </a> {% endcomment %}
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarExample01"
+          aria-controls="navbarExample01" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-bars"></i>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarExample01">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item active">
+              <a class="nav-link" aria-current="page" href="{% url 'home' %}"><i class="fa-solid fa-house-user"></i></a>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav d-flex flex-row">
+            <!-- Icons -->
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="{% url 'add-post' %}" >
+                <i class="fa-solid fa-square-plus"></i>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="{% url 'userdashboard' %}" >
+                <lord-icon
+                src="https://cdn.lordicon.com/bhfjfgqz.json"
+                trigger="hover"
+                style="width:26px;height:26px">
+                </lord-icon>
+              </a>
+            </li>
+            <li class="nav-item me-3 me-lg-0">
+              <a class="nav-link" href="{% url 'saved-posts' %}">
+                <lord-icon
+                  src="https://cdn.lordicon.com/psnhyobz.json"
+                  trigger="hover"
+                  style="width:26px;height:26px">
+                </lord-icon>    
+              </a>
+          </li>
+            <a class="nav-link" href="{% url 'signout' %}"><i class="fa-solid fa-right-from-bracket"></i></a>
+            {% comment %} <li class="nav-item me-3 me-lg-0">
+                <a class="nav-link" href="{% url 'signout' %}">
+                  <lord-icon
+                    src="https://cdn.lordicon.com/psnhyobz.json"
+                    trigger="hover"
+                    style="width:26px;height:26px">
+                  </lord-icon>    
+                </a>
+            </li> {% endcomment %}
+            
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar -->
+  </header>
+    
+{% block body_block %}
+
+
+{% endblock  %}
+
+    <!-- footer start -->
+    <footer class="bg-light text-lg-start">
+    
+        <div class="text-center py-4 align-items-center">
+          <p>Follow MDB on social media</p>
+          <a href="https://www.youtube.com/channel/UC5CF7mLQZhvx8O5GODZAhdA" class="btn btn-primary m-1" role="button"
+            rel="nofollow" target="_blank">
+            <i class="fab fa-youtube"></i>
+          </a>
+          <a href="https://www.facebook.com/mdbootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+            target="_blank">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+          <a href="https://twitter.com/MDBootstrap" class="btn btn-primary m-1" role="button" rel="nofollow"
+            target="_blank">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://github.com/mdbootstrap/mdb-ui-kit" class="btn btn-primary m-1" role="button" rel="nofollow"
+            target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        </div>
+        <!-- footer end  -->
+    
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgba(0, 0, 0, 0.2);">
+          © 2020 Copyright:
+          <a class="text-dark">JAIS PAUL</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+    </body>
+    </html>
